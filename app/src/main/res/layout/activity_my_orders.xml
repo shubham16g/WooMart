@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ui.order.MyOrdersActivity">
+
+  <com.google.android.material.appbar.AppBarLayout
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+	android:theme="@style/AppTheme.AppBarOverlay">
+
+	<androidx.appcompat.widget.Toolbar
+	  android:id="@+id/toolbar"
+	  android:layout_width="match_parent"
+	  android:layout_height="?attr/actionBarSize"
+	  android:background="?attr/colorPrimary"
+	  app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <include layout="@layout/content_my_orders"/>
+
+  <include layout="@layout/state_empty"/>
+
+  <FrameLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/colorPrimary"
+	android:orientation="horizontal"
+	android:paddingTop="4dp"
+	android:paddingBottom="4dp"
+	android:paddingRight="16dp"
+	android:layout_margin="16dp"
+	android:gravity="center"
+	android:layout_gravity="bottom"
+	android:elevation="2dp"
+	android:id="@+id/flSave"
+	>
+
+	<TextView
+	  android:id="@+id/bNext"
+	  fontPath="@string/font_regular"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:layout_gravity="center_horizontal"
+	  android:background="@color/colorPrimary"
+	  android:text="Done"
+	  android:padding="12dp"
+	  android:gravity="center"
+	  android:textAllCaps="false"
+	  android:textColor="#ffffff"
+	  android:textSize="16sp"
+	  tools:ignore="MissingPrefix"/>
+
+	<ImageView
+	  android:layout_width="32dp"
+	  android:layout_height="32dp"
+	  app:srcCompat="@drawable/baseline_arrow_back_24"
+	  android:tint="#ffffff"
+	  android:layout_gravity="right|center"
+	  android:rotation="180"
+	  />
+
+  </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

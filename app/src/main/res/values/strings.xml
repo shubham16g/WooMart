@@ -1,0 +1,51 @@
+<resources>
+  <string name="app_name">WooDroid</string>
+  <string name="title_activity_shop">ShopActivity</string>
+  <string name="title_activity_coupon">CouponActivity</string>
+  <string name="title_activity_menu">MenuActivity</string>
+
+
+  <string name="font_bold">fonts/GT-America-Bold.otf</string>
+  <string name="font_medium">fonts/GT-America-Medium.otf</string>
+  <string name="font_regular">fonts/GT-America-Regular.otf</string>
+  <string name="title_activity_add_coupon">AddCouponActivity</string>
+  <string name="title_activity_coupons">CouponsActivity</string>
+  <string name="search_title">search</string>
+  <string name="search_hint">Search product</string>
+  <string name="title_activity_product_search">ProductSearchActivity</string>
+  <string name="title_activity_product">ProductActivity</string>
+  <string name="title_activity_navigatio_drawer">NavigatioDrawerActivity</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="nav_header_title">Android Studio</string>
+  <string name="nav_header_subtitle">android.studio@android.com</string>
+  <string name="nav_header_desc">Navigation header</string>
+  <string name="action_settings">Settings</string>
+
+  <string-array name="sort">
+	<item>Popularity</item>
+	<item>Date added</item>
+	<item>Price lowest first</item>
+	<item>Price highest first</item>
+  </string-array>
+  <string name="title_activity_category">CategoryActivity</string>
+  <string name="title_activity_home">HomeActivity</string>
+  <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</string>
+  <string name="title_activity_my_orders">MyOrdersActivity</string>
+  <string name="title_activity_user_details">UserDetailsActivity</string>
+  <string name="title_activity_basic_customer_details">BasicCustomerDetailsActivity</string>
+  <string name="title_activity_billing_address">BillingAddressActivity</string>
+  <string name="title_activity_shipping_address">ShippingAddressActivity</string>
+  <string name="title_activity_profile">ProfileActivity</string>
+  <string name="dummy_address">
+    953 Market\n
+    San Fransisco, CA 90248 \n
+    United States \n
+    (555) 555 555
+  </string>
+  <string name="title_activity_cart">CartActivity</string>
+  <string name="title_activity_checkout">CheckoutActivity</string>
+  <string name="title_activity_anonymous_sign_in">AnonymousSignInActivity</string>
+  <string name="title_activity_order">OrderActivity</string>
+
+</resources>

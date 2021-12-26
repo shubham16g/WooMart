@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596743038205",
+    "project_id": "woomart-2602e",
+    "storage_bucket": "woomart-2602e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596743038205:android:a42edf10798af22aec4a94",
+        "android_client_info": {
+          "package_name": "com.shubhamgupta16.woomart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596743038205-p687uvpogbd885hvmggt6fjuhb6obk2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7vMbFAIEz1PSPg1rmhzzLQ0oLW2NoCpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596743038205-p687uvpogbd885hvmggt6fjuhb6obk2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:attrs="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:background="@color/bg"
+  tools:ignore="MissingPrefix"
+  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+  <LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<TextView
+	  fontPath="@string/font_medium"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginTop="24dp"
+	  android:layout_marginRight="16dp"
+	  android:text="Basic details"
+	  android:textColor="@color/text_black_2"
+	  android:textSize="20sp"
+	  />
+
+	<TextView
+	  fontPath="@string/font_regular"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginRight="16dp"
+	  android:layout_marginTop="4dp"
+	  android:text="Basic info about you"
+	  android:maxLines="6"
+	  android:lineSpacingMultiplier="1.2"
+	  android:textColor="@color/text_black_9"
+	  android:textSize="16sp"/>
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="vertical"
+	  android:background="@drawable/rect_white"
+	  android:elevation="2dp"
+	  android:layout_margin="16dp"
+	  android:padding="16dp">
+
+	  <TextView
+		android:id="@+id/tvBasicDetailsName"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="John Doe"
+		android:maxLines="6"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/text_black_2"
+		android:textSize="16sp"/>
+	  <TextView
+		android:id="@+id/tvEmail"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Email : john@mail.com"
+		android:maxLines="6"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/text_black_5"
+		android:textSize="16sp"/>
+	  <TextView
+		android:id="@+id/tvUsername"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Username : john"
+		android:maxLines="6"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/text_black_5"
+		android:textSize="16sp"/>
+	  <TextView
+		android:id="@+id/tvBasicDetailsEdit"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="Edit"
+		android:paddingLeft="16dp"
+		android:paddingTop="16dp"
+		android:layout_gravity="right"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/colorPrimary"
+		android:textSize="16sp"/>
+
+
+	</LinearLayout>
+
+
+	<TextView
+	  fontPath="@string/font_medium"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginTop="24dp"
+	  android:layout_marginRight="16dp"
+	  android:text="Billing Address"
+	  android:textColor="@color/text_black_2"
+	  android:textSize="20sp"
+	  />
+
+	<TextView
+	  fontPath="@string/font_regular"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginRight="16dp"
+	  android:layout_marginTop="4dp"
+	  android:text="Your billing address"
+	  android:maxLines="6"
+	  android:lineSpacingMultiplier="1.2"
+	  android:textColor="@color/text_black_9"
+	  android:textSize="16sp"/>
+
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="vertical"
+	  android:background="@drawable/rect_white"
+	  android:elevation="2dp"
+	  android:layout_margin="16dp"
+	  android:padding="16dp">
+
+	  <TextView
+		android:id="@+id/tvBillingAddress"
+		fontPath="@string/font_regular"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:layout_weight="1"
+		android:text="@string/dummy_address"
+		android:maxLines="6"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/text_black_5"
+		android:textSize="16sp"/>
+
+	  <TextView
+		android:id="@+id/tvBillingAddressEdit"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="Edit"
+		android:paddingLeft="16dp"
+		android:paddingTop="16dp"
+		android:layout_gravity="right"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/colorPrimary"
+		android:textSize="16sp"/>
+
+
+	</LinearLayout>
+
+	<TextView
+	  fontPath="@string/font_medium"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginTop="24dp"
+	  android:layout_marginRight="16dp"
+	  android:text="Shipping Address"
+	  android:textColor="@color/text_black_2"
+	  android:textSize="20sp"
+	  />
+
+	<TextView
+	  fontPath="@string/font_regular"
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:gravity="left"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginRight="16dp"
+	  android:layout_marginTop="4dp"
+	  android:text="Your shipping address"
+	  android:maxLines="6"
+	  android:lineSpacingMultiplier="1.2"
+	  android:textColor="@color/text_black_9"
+	  android:textSize="16sp"/>
+
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="vertical"
+	  android:background="@drawable/rect_white"
+	  android:elevation="2dp"
+	  android:layout_margin="16dp"
+	  android:padding="16dp">
+
+	  <TextView
+		android:id="@+id/tvShippingAddress"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="@string/dummy_address"
+		android:maxLines="6"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/text_black_5"
+		android:textSize="16sp"/>
+
+
+	  <TextView
+		android:id="@+id/tvShippingAddressEdit"
+		fontPath="@string/font_regular"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="Edit"
+		android:paddingLeft="16dp"
+		android:paddingTop="16dp"
+		android:layout_gravity="right"
+		android:lineSpacingMultiplier="1.2"
+		android:textColor="@color/colorPrimary"
+		android:textSize="16sp"/>
+
+
+
+	</LinearLayout>
+
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:attrs="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:background="@color/bg"
+  tools:ignore="MissingPrefix"
+  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+  <LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+
+	<View
+	  android:layout_width="match_parent"
+	  android:layout_height="1dp"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginRight="16dp"
+	  android:background="#d8d8d8"
+	  android:layout_marginTop="16dp"
+	  android:layout_marginBottom="16dp"
+	  />
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="horizontal"
+	  android:paddingLeft="16dp"
+	  android:paddingRight="16dp"
+	  >
+
+	  <TextView
+		android:id="@+id/tvTotalItemCountTitle"
+		fontPath="@string/font_regular"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Item (1)"
+		android:layout_weight="1"
+		android:textColor="@color/text_black_9"
+		android:textSize="14sp"
+		/>
+
+	  <TextView
+		android:id="@+id/tvTotalItemCost"
+		fontPath="@string/font_medium"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="$0"
+		android:textColor="@color/text_black_9"
+		android:textSize="14sp"
+		/>
+
+	</LinearLayout>
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="horizontal"
+	  android:paddingLeft="16dp"
+	  android:paddingRight="16dp"
+	  android:layout_marginTop="8dp"
+	  >
+
+	  <TextView
+		android:id="@+id/tvShippingTitle"
+		fontPath="@string/font_regular"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Shipping within San Fransisco"
+		android:layout_weight="1"
+		android:textColor="@color/text_black_9"
+		android:textSize="14sp"
+		/>
+
+	  <TextView
+		android:id="@+id/tvShippingCost"
+		fontPath="@string/font_medium"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="$0"
+		android:textColor="@color/text_black_9"
+		android:textSize="14sp"
+		/>
+
+	</LinearLayout>
+
+
+	<View
+	  android:layout_width="match_parent"
+	  android:layout_height="1dp"
+	  android:layout_marginTop="16dp"
+	  android:layout_marginLeft="16dp"
+	  android:layout_marginRight="16dp"
+	  android:background="#d8d8d8"
+	  />
+
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="horizontal"
+	  android:padding="16dp"
+	  >
+
+	  <TextView
+		fontPath="@string/font_medium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Total"
+		android:layout_weight="1"
+		android:textColor="@color/text_black_2"
+		android:textSize="20sp"
+		/>
+
+	  <TextView
+		android:id="@+id/tvTotal"
+		fontPath="@string/font_medium"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="$0"
+		android:textColor="@color/text_black_2"
+		android:textSize="20sp"
+		/>
+
+	</LinearLayout>
+
+
+
+
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>
