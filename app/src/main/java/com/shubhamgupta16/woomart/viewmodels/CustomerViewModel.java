@@ -9,10 +9,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.shubhamgupta16.woomart.repo.CustomerRepository;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.Customer;
 import me.gilo.woodroid.models.filters.CustomerFilter;
 
 
+@HiltViewModel
 public final class CustomerViewModel extends ViewModel {
     private final CustomerRepository customerRepository;
 

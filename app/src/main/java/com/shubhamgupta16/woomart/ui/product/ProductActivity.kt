@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_product.*
@@ -23,17 +24,18 @@ import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
 import com.shubhamgupta16.woomart.adapter.ImagePagerAdapter
 import com.shubhamgupta16.woomart.core.CartItemCore
 import com.shubhamgupta16.woomart.offlinecart.RoomCartRepository
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Product
 import org.greenrobot.eventbus.EventBus
 
-
+@AndroidEntryPoint
 class ProductActivity : BaseActivity() {
 
     var productInCart = false;
     lateinit var currentCartItem : CartLineItem
 
-    lateinit var viewModel: ProductViewModel
+    val viewModel: ProductViewModel by viewModels()
     val TAG = this::getLocalClassName.toString()
 
     var related_ids : IntArray = intArrayOf()
@@ -46,7 +48,6 @@ class ProductActivity : BaseActivity() {
         setContentView(R.layout.activity_product)
         setSupportActionBar(toolbar)
 
-        viewModel = getViewModel(ProductViewModel::class.java)
 
         title = "Product"
 

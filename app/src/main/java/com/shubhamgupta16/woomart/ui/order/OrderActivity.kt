@@ -1,6 +1,7 @@
 package com.shubhamgupta16.woomart.ui.order
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.android.synthetic.main.content_order.*
@@ -10,13 +11,14 @@ import com.shubhamgupta16.woomart.viewmodels.OrderViewModel
 import com.shubhamgupta16.woomart.adapter.CartAdapter
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Order
 import me.gilo.woodroid.models.filters.ProductFilter
-
+@AndroidEntryPoint
 class OrderActivity : WooDroidActivity<OrderViewModel>() {
 
 
-    override lateinit var viewModel: OrderViewModel
+    val viewModel: OrderViewModel by viewModels()
     var orders: ArrayList<Order> = ArrayList()
 
     var cartItems: ArrayList<CartLineItem> = ArrayList()
@@ -30,7 +32,6 @@ class OrderActivity : WooDroidActivity<OrderViewModel>() {
         setContentView(R.layout.activity_order)
         setSupportActionBar(toolbar)
 
-        viewModel = getViewModel(OrderViewModel::class.java)
         title = "Orders"
 
         orderId = intent.getIntExtra("orderId", 0)

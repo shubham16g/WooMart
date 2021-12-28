@@ -1,15 +1,18 @@
 package com.shubhamgupta16.woomart.ui.home
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CartViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : WooDroidActivity<CartViewModel>() {
-    override lateinit var viewModel: CartViewModel
+    val viewModel: CartViewModel by viewModels()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
 import com.shubhamgupta16.woomart.ui.onboarding.AnonymousSignInActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 

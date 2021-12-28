@@ -4,20 +4,22 @@ import androidx.lifecycle.Observer
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.customer_basic_details.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Customer
 import java.util.regex.Matcher
 import java.util.regex.Pattern
-
+@AndroidEntryPoint
 class BasicCustomerDetailsActivity : WooDroidActivity<CustomerViewModel>() {
 
 
-    override lateinit var viewModel: CustomerViewModel
+    val viewModel: CustomerViewModel by viewModels()
     private val pattern = Pattern.compile(EMAIL_PATTERN)
     private var matcher: Matcher? = null
     lateinit var customer: Customer
@@ -32,7 +34,6 @@ class BasicCustomerDetailsActivity : WooDroidActivity<CustomerViewModel>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_customer_details)
 
-        viewModel = getViewModel(CustomerViewModel::class.java)
         title = "Basic Details"
 
         customer()

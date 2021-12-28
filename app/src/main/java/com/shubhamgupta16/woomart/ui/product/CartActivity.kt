@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.content_cart.*
@@ -20,17 +21,18 @@ import com.shubhamgupta16.woomart.viewmodels.CartViewModel
 import com.shubhamgupta16.woomart.adapter.CartAdapter
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Customer
 import me.gilo.woodroid.models.LineItem
 import me.gilo.woodroid.models.Order
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-
+@AndroidEntryPoint
 class CartActivity : WooDroidActivity<CartViewModel>() {
 
 
-    override lateinit var viewModel: CartViewModel
+    val viewModel: CartViewModel by viewModels()
     var cartItems: ArrayList<CartLineItem> = ArrayList()
 
     lateinit var adapter: CartAdapter
@@ -46,7 +48,6 @@ class CartActivity : WooDroidActivity<CartViewModel>() {
 
         setSupportActionBar(toolbar)
 
-        viewModel = getViewModel(CartViewModel::class.java)
         title = "Cart"
 
         val layoutManager = LinearLayoutManager(

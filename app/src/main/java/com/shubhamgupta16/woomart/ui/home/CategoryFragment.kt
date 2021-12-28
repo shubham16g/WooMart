@@ -6,20 +6,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.fragment_category.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CategoryViewModel
 import com.shubhamgupta16.woomart.adapter.CategoryAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Category
 import me.gilo.woodroid.models.filters.ProductCategoryFilter
 import java.util.*
 
-
+@AndroidEntryPoint
 class CategoryFragment : Fragment() {
 
 
-    lateinit var viewModel: CategoryViewModel
+    val viewModel: CategoryViewModel by viewModels()
     val TAG = "CategoryFragment"
 
     lateinit var adapter: CategoryAdapter
@@ -44,7 +47,6 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as HomeActivity).getViewModel(CategoryViewModel::class.java)
 
         val layoutManager = LinearLayoutManager(
             activity,

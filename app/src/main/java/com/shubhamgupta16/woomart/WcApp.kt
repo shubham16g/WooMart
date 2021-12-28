@@ -1,13 +1,13 @@
 package com.shubhamgupta16.woomart
 
-import com.shubhamgupta16.woomart.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
 
-class WcApp : DaggerApplication() {
+@HiltAndroidApp
+class WcApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -26,10 +26,5 @@ class WcApp : DaggerApplication() {
         )
 
 
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-//        return null
-       return DaggerAppComponent.create()
     }
 }

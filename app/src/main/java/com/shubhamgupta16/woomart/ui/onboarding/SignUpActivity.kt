@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.content_sign_up.*
 import com.shubhamgupta16.woomart.R
@@ -15,12 +16,13 @@ import me.gilo.woodroid.callback.Status
 
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Matcher
 import java.util.regex.Pattern
-
+@AndroidEntryPoint
 class SignUpActivity : WooDroidActivity<UserViewModel>() {
 
-    override lateinit var viewModel : UserViewModel
+    val viewModel : UserViewModel by viewModels()
     val TAG = this::getLocalClassName
 
     private lateinit var progressDialog: ProgressDialogFragment
@@ -35,7 +37,6 @@ class SignUpActivity : WooDroidActivity<UserViewModel>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        viewModel = getViewModel(UserViewModel::class.java)
 
         title = "Sign Up"
 
@@ -186,7 +187,8 @@ class SignUpActivity : WooDroidActivity<UserViewModel>() {
     }
 
     companion object {
-        private const val EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$"
+        private const val EMAIL_PATTERN =
+            "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$"
     }
 
 }

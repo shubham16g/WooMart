@@ -6,13 +6,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.UserViewModel
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnonymousSignInActivity : WooDroidActivity<UserViewModel>() {
 
 
@@ -20,7 +23,7 @@ class AnonymousSignInActivity : WooDroidActivity<UserViewModel>() {
         private const val TAG = "AnonymousSignInActivity"
     }
 
-    override lateinit var viewModel: UserViewModel
+     val viewModel: UserViewModel by viewModels()
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
@@ -30,7 +33,6 @@ class AnonymousSignInActivity : WooDroidActivity<UserViewModel>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anonymous_sign_in)
 
-        viewModel = getViewModel(UserViewModel::class.java)
         anonymousSignIn()
 
     }

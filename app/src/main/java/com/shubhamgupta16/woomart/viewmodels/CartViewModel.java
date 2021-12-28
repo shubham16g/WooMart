@@ -14,10 +14,12 @@ import javax.inject.Inject;
 import com.shubhamgupta16.woomart.repo.CartRepository;
 import com.shubhamgupta16.woomart.repo.CustomerRepository;
 import com.shubhamgupta16.woomart.repo.OrderRepository;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.Customer;
 import me.gilo.woodroid.models.Order;
 
-
+@HiltViewModel
 public final class CartViewModel extends ViewModel {
 
     private final CartRepository cartRepository;

@@ -6,12 +6,15 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 import javax.inject.Named
 import javax.inject.Singleton
 
 
 @Module
+@InstallIn(SingletonComponent::class)
 internal class FirebaseModule {
 
     private val firestoreInstance: FirebaseFirestore

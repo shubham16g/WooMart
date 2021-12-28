@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/activity_anonymous_sign_in.xml" value="0.2" />
+        <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/activity_sign_up.xml" value="0.18611111111111112" />
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/content_product.xml" value="0.2" />
+        <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/content_profile.xml" value="0.2" />
+        <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/content_sign_up.xml" value="0.2" />
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/item_layout.xml" value="0.19692307692307692" />
+        <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/loading_view.xml" value="0.2" />
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/layout/state_error.xml" value="0.2" />
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/menu/navigation.xml" value="0.2" />
         <entry key="..\:/App_Projects/WooMart/app/src/main/res/menu/product.xml" value="0.2" />

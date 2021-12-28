@@ -76,7 +76,7 @@
             android:name=".ui.onboarding.SignUpActivity"
             android:label="@string/title_activity_category"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.onboarding.SignInActivity"
             android:label="@string/title_activity_category"

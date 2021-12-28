@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.content_sign_in.*
 import com.shubhamgupta16.woomart.R
@@ -13,14 +14,15 @@ import com.shubhamgupta16.woomart.viewmodels.UserViewModel
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-
+@AndroidEntryPoint
 class SignInActivity : WooDroidActivity<UserViewModel>() {
 
 
-    override lateinit var viewModel : UserViewModel
+    val viewModel : UserViewModel by viewModels()
 
     private lateinit var progressDialog: ProgressDialogFragment
     private val pattern = Pattern.compile(EMAIL_PATTERN)
@@ -33,9 +35,6 @@ class SignInActivity : WooDroidActivity<UserViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
-
-        viewModel = getViewModel(UserViewModel::class.java)
 
         title = "Sign In"
 

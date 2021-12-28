@@ -5,17 +5,20 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.content_profile.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
-
+@AndroidEntryPoint
 class ProfileActivity : WooDroidActivity<CustomerViewModel>() {
 
-    override lateinit var viewModel : CustomerViewModel
+    val  viewModel : CustomerViewModel by viewModels()
+//    fixme it was initialize in onResume..
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
@@ -38,7 +41,6 @@ class ProfileActivity : WooDroidActivity<CustomerViewModel>() {
     override fun onResume() {
         super.onResume()
 
-        viewModel = getViewModel(CustomerViewModel::class.java)
         customer()
     }
 

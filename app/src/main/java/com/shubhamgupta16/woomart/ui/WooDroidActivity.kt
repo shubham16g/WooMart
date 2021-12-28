@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.google.firebase.auth.FirebaseAuth
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import com.shubhamgupta16.woomart.ui.onboarding.SignInActivity
@@ -22,7 +23,6 @@ import com.shubhamgupta16.woomart.ui.product.CartActivity
 abstract class WooDroidActivity<T : ViewModel> : BaseActivity() {
 
 
-    abstract var viewModel : T
     private lateinit var progressDialog: ProgressDialogFragment
 
     override fun attachBaseContext(newBase: Context) {
@@ -85,7 +85,7 @@ abstract class WooDroidActivity<T : ViewModel> : BaseActivity() {
     }
 
     open fun cart() {
-        var viewModel = getViewModel(CartViewModel::class.java)
+        val viewModel:CartViewModel by viewModels()
 
         viewModel.cart().observe(this, { response ->
             when (response!!.status()) {

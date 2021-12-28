@@ -4,18 +4,20 @@ import androidx.lifecycle.Observer
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.customer_shipping_address.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Customer
 import me.gilo.woodroid.models.ShippingAddress
-
+@AndroidEntryPoint
 class ShippingAddressActivity : WooDroidActivity<CustomerViewModel>() {
 
-    override lateinit var viewModel : CustomerViewModel
+    val viewModel : CustomerViewModel by viewModels()
     lateinit var customer : Customer
 
     override fun attachBaseContext(newBase: Context) {
@@ -26,7 +28,6 @@ class ShippingAddressActivity : WooDroidActivity<CustomerViewModel>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shipping_address)
 
-        viewModel = getViewModel(CustomerViewModel::class.java)
         title = "Billing Address"
 
         customer()

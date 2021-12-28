@@ -2,23 +2,26 @@ package com.shubhamgupta16.woomart.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_profile.*
-import com.shubhamgupta16.woomart.ui.onboarding.SignUpActivity
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.viewmodels.UserViewModel
 import com.shubhamgupta16.woomart.ui.customer.ProfileActivity
+import com.shubhamgupta16.woomart.ui.onboarding.SignUpActivity
 import com.shubhamgupta16.woomart.ui.order.MyOrdersActivity
+import com.shubhamgupta16.woomart.viewmodels.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_profile.*
 
-
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
 
-    lateinit var viewModel: UserViewModel
+    val viewModel: UserViewModel by viewModels()
     val TAG = "ProfileFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +41,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as HomeActivity).getViewModel(UserViewModel::class.java)
-
         llMyProfile.setOnClickListener{
             if (FirebaseAuth.getInstance().currentUser != null) {
                 startActivity(Intent(activity, ProfileActivity::class.java))
@@ -51,6 +52,7 @@ class ProfileFragment : Fragment() {
         llLogout.setOnClickListener{
            viewModel.logout()
             startActivity(Intent(activity, SignUpActivity::class.java))
+            Log.d(TAG, "onViewCreated: signout")
         }
 
         llMyOrders.setOnClickListener{

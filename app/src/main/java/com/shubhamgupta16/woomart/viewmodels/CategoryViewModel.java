@@ -9,10 +9,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.Category;
 import me.gilo.woodroid.models.filters.ProductCategoryFilter;
 
-
+@HiltViewModel
 public final class CategoryViewModel extends ViewModel {
     private final CategoryRepository categoryRepository;
 

@@ -10,12 +10,14 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.Order;
 import me.gilo.woodroid.models.Product;
 import me.gilo.woodroid.models.filters.OrderFilter;
 import me.gilo.woodroid.models.filters.ProductFilter;
 
 
+@HiltViewModel
 public final class OrderViewModel extends ViewModel {
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.section_related_products.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.common.BaseActivity
@@ -24,7 +25,7 @@ import java.util.*
 class RelatedProductsFragment : Fragment() {
 
 
-    lateinit var viewModel: ProductViewModel
+    val viewModel: ProductViewModel by viewModels()
     val TAG = "RelatedProductFragment"
 
     lateinit var adapter: HomeProductAdapter
@@ -51,8 +52,6 @@ class RelatedProductsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as BaseActivity).getViewModel(
-            ProductViewModel::class.java)
 
         //similarProducts()
     }

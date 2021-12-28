@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.section_product_reviews.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.common.BaseActivity
@@ -15,17 +16,18 @@ import com.shubhamgupta16.woomart.viewmodels.ReviewViewModel
 import com.shubhamgupta16.woomart.adapter.ProductReviewAdapter
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.product.ProductActivity
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.ProductReview
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.*
 
-
+@AndroidEntryPoint
 class ProductReviewsFragment : Fragment() {
 
 
-    lateinit var viewModel: ReviewViewModel
+    val viewModel: ReviewViewModel by viewModels()
     val TAG = "ProductReviewsFragment"
     var productId = 0
 
@@ -48,8 +50,6 @@ class ProductReviewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as BaseActivity).getViewModel(
-            ReviewViewModel::class.java)
 
 
         productId = (activity as ProductActivity).intent.getIntExtra("productId", 0)

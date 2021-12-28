@@ -9,9 +9,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.ProductReview;
 
 
+@HiltViewModel
 public final class ReviewViewModel extends ViewModel {
     private final ReviewRepository reviewRepository;
 

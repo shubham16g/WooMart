@@ -15,7 +15,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
 
+
+@HiltViewModel
 public final class UserViewModel extends ViewModel {
     private final MutableLiveData<String> id = new MutableLiveData<>();
     private final FirebaseUserRepository firebaseUserRepository;

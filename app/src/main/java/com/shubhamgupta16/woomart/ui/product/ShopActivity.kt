@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_shop.*
 import kotlinx.android.synthetic.main.content_shop.*
@@ -17,18 +18,19 @@ import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
 import com.shubhamgupta16.woomart.utils.AppUtils
 import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
 import com.shubhamgupta16.woomart.adapter.ProductAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Product
 import me.gilo.woodroid.models.filters.ProductFilter
 import java.util.*
 
-
+@AndroidEntryPoint
 class ShopActivity : BaseActivity() {
 
     lateinit var adapter: ProductAdapter
     var products : ArrayList<Product> = ArrayList()
 
-    private lateinit var viewModel: ProductViewModel
+    val viewModel: ProductViewModel by viewModels()
     val TAG = this::getLocalClassName
 
     override fun attachBaseContext(newBase: Context) {
@@ -40,7 +42,6 @@ class ShopActivity : BaseActivity() {
         setContentView(R.layout.activity_shop)
         setSupportActionBar(toolbar)
 
-        viewModel = getViewModel(ProductViewModel::class.java)
 
         title = "Shop"
 

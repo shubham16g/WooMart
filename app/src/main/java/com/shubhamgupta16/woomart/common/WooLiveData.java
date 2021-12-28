@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 
 import java.io.IOException;
 
+import me.gilo.woodroid.callback.NetworkException;
 import me.gilo.woodroid.callback.Resource;
 import me.gilo.woodroid.callback.Status;
 import retrofit2.Call;

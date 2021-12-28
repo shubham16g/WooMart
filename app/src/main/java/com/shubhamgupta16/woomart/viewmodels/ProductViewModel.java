@@ -15,12 +15,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.shubhamgupta16.woomart.repo.CartRepository;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import me.gilo.woodroid.models.Order;
 import me.gilo.woodroid.models.Product;
 import me.gilo.woodroid.models.ProductReview;
 import me.gilo.woodroid.models.filters.ProductFilter;
 
 
+@HiltViewModel
 public final class ProductViewModel extends ViewModel {
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;

@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.GridLayoutManager
 import android.widget.Toast
+import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.common.BaseActivity
@@ -16,6 +17,7 @@ import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
 import kotlinx.android.synthetic.main.activity_product_search.*
 import kotlinx.android.synthetic.main.content_shop.*
 import com.shubhamgupta16.woomart.adapter.ProductAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Product
 import org.json.JSONObject
@@ -23,14 +25,14 @@ import java.util.ArrayList
 
 
 
-
+@AndroidEntryPoint
 class ProductSearchActivity : BaseActivity() {
 
     lateinit var adapter: ProductAdapter
     lateinit var products: ArrayList<Product>
     lateinit var toggle: ActionBarDrawerToggle
 
-    lateinit var viewModel: ProductViewModel
+    val viewModel: ProductViewModel by viewModels()
     val TAG = this::getLocalClassName
 
     override fun attachBaseContext(newBase: Context) {
@@ -42,7 +44,6 @@ class ProductSearchActivity : BaseActivity() {
         setContentView(R.layout.activity_product_search)
         setSupportActionBar(toolbar)
 
-        viewModel = getViewModel(ProductViewModel::class.java)
 
         title = "Search"
 

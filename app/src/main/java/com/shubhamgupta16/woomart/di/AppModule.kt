@@ -4,23 +4,14 @@ import com.shubhamgupta16.woomart.Config
 import com.shubhamgupta16.woomart.WcApp
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import me.gilo.woodroid.Woocommerce
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class AppModule {
-
-    internal var app: WcApp? = null
-
-    internal fun AppModule(application: WcApp) {
-        app = application
-    }
-
-    @Provides
-    @Singleton
-    internal fun providesApplication(): WcApp {
-        return app!!
-    }
 
     @Provides
     @Singleton
