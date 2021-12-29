@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.section_product_reviews.*
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
 import com.shubhamgupta16.woomart.events.ReviewEvent
 import com.shubhamgupta16.woomart.viewmodels.ReviewViewModel
 import com.shubhamgupta16.woomart.adapter.ProductReviewAdapter

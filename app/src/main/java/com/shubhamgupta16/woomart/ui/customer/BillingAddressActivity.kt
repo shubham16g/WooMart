@@ -5,18 +5,17 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.google.firebase.auth.FirebaseAuth
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.customer_billing_address.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import me.gilo.woodroid.callback.Status
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.BillingAddress
 import me.gilo.woodroid.models.Customer
 @AndroidEntryPoint
-class BillingAddressActivity : WooDroidActivity<CustomerViewModel>() {
+class BillingAddressActivity : WooDroidActivity() {
 
     val viewModel : CustomerViewModel by viewModels()
     lateinit var customer : Customer
@@ -107,7 +106,8 @@ class BillingAddressActivity : WooDroidActivity<CustomerViewModel>() {
             customer.billingAddress.country = country
             customer.billingAddress.phone = phone
 
-            customer.billingAddress.email = FirebaseAuth.getInstance().currentUser!!.email!!
+//            todo firebase auth
+//            customer.billingAddress.email = FirebaseAuth.getInstance().currentUser!!.email!!
 
             viewModel.update(customer.id, customer).observe(this, Observer {
                     response->

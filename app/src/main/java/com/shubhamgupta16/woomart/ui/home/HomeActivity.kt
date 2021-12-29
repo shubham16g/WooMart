@@ -7,11 +7,11 @@ import androidx.fragment.app.Fragment
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CartViewModel
 import kotlinx.android.synthetic.main.activity_home.*
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeActivity : WooDroidActivity<CartViewModel>() {
+class HomeActivity : WooDroidActivity() {
     val viewModel: CartViewModel by viewModels()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

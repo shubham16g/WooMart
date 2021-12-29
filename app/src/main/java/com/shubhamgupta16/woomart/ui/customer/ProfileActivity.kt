@@ -11,11 +11,11 @@ import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.content_profile.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 @AndroidEntryPoint
-class ProfileActivity : WooDroidActivity<CustomerViewModel>() {
+class ProfileActivity : WooDroidActivity() {
 
     val  viewModel : CustomerViewModel by viewModels()
 //    fixme it was initialize in onResume..

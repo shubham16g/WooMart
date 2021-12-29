@@ -10,12 +10,12 @@ import com.shubhamgupta16.woomart.models.CartLineItem
 import com.shubhamgupta16.woomart.viewmodels.OrderViewModel
 import com.shubhamgupta16.woomart.adapter.CartAdapter
 import me.gilo.woodroid.callback.Status
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Order
 import me.gilo.woodroid.models.filters.ProductFilter
 @AndroidEntryPoint
-class OrderActivity : WooDroidActivity<OrderViewModel>() {
+class OrderActivity : WooDroidActivity() {
 
 
     val viewModel: OrderViewModel by viewModels()

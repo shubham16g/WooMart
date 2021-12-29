@@ -10,13 +10,13 @@ import kotlinx.android.synthetic.main.customer_basic_details.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import me.gilo.woodroid.callback.Status
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Customer
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 @AndroidEntryPoint
-class BasicCustomerDetailsActivity : WooDroidActivity<CustomerViewModel>() {
+class BasicCustomerDetailsActivity : WooDroidActivity() {
 
 
     val viewModel: CustomerViewModel by viewModels()

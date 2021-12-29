@@ -20,7 +20,7 @@ import com.shubhamgupta16.woomart.models.CartLineItem
 import com.shubhamgupta16.woomart.viewmodels.CartViewModel
 import com.shubhamgupta16.woomart.adapter.CartAdapter
 import me.gilo.woodroid.callback.Status
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.models.Customer
 import me.gilo.woodroid.models.LineItem
@@ -29,7 +29,7 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 @AndroidEntryPoint
-class CartActivity : WooDroidActivity<CartViewModel>() {
+class CartActivity : WooDroidActivity() {
 
 
     val viewModel: CartViewModel by viewModels()

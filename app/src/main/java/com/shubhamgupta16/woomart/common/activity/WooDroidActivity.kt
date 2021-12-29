@@ -1,6 +1,5 @@
-package com.shubhamgupta16.woomart.ui
+package com.shubhamgupta16.woomart.common.activity
 
-import androidx.lifecycle.ViewModel
 import android.content.Context
 import android.content.Intent
 import android.view.Menu
@@ -10,17 +9,14 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.google.firebase.auth.FirebaseAuth
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
-import com.shubhamgupta16.woomart.ui.onboarding.SignInActivity
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
 import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
 import com.shubhamgupta16.woomart.viewmodels.CartViewModel
 import me.gilo.woodroid.callback.Status
 import com.shubhamgupta16.woomart.ui.product.CartActivity
 
-abstract class WooDroidActivity<T : ViewModel> : BaseActivity() {
+abstract class WooDroidActivity : CalligraphyBaseActivity() {
 
 
     private lateinit var progressDialog: ProgressDialogFragment
@@ -33,10 +29,11 @@ abstract class WooDroidActivity<T : ViewModel> : BaseActivity() {
     override fun onResume() {
         super.onResume()
 
-        if(FirebaseAuth.getInstance().currentUser == null){
+//        todo firebase auth
+        /*if(FirebaseAuth.getInstance().currentUser == null){
             startActivity(Intent(baseContext, SignInActivity::class.java))
             finish()
-        }
+        }*/
         //cart()
     }
 

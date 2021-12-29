@@ -9,13 +9,13 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.customer_shipping_address.*
 import com.shubhamgupta16.woomart.R
 import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import dagger.hilt.android.AndroidEntryPoint
 import me.gilo.woodroid.callback.Status
 import me.gilo.woodroid.models.Customer
 import me.gilo.woodroid.models.ShippingAddress
 @AndroidEntryPoint
-class ShippingAddressActivity : WooDroidActivity<CustomerViewModel>() {
+class ShippingAddressActivity : WooDroidActivity() {
 
     val viewModel : CustomerViewModel by viewModels()
     lateinit var customer : Customer

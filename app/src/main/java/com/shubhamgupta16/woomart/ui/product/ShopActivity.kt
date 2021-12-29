@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_shop.*
 import kotlinx.android.synthetic.main.content_shop.*
 import kotlinx.android.synthetic.main.drawer_filter.*
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
+import com.shubhamgupta16.woomart.common.activity.CalligraphyBaseActivity
 import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
 import com.shubhamgupta16.woomart.utils.AppUtils
 import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
@@ -25,7 +25,7 @@ import me.gilo.woodroid.models.filters.ProductFilter
 import java.util.*
 
 @AndroidEntryPoint
-class ShopActivity : BaseActivity() {
+class ShopActivity : CalligraphyBaseActivity() {
 
     lateinit var adapter: ProductAdapter
     var products : ArrayList<Product> = ArrayList()

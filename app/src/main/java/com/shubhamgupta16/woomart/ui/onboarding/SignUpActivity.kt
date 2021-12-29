@@ -9,20 +9,24 @@ import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.content_sign_up.*
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.models.User
+import com.shubhamgupta16.woomart.sessions.CurrentSession
 import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
-import com.shubhamgupta16.woomart.viewmodels.UserViewModel
 import me.gilo.woodroid.callback.Status
 
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
+import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import me.gilo.woodroid.models.Customer
 import java.util.regex.Matcher
 import java.util.regex.Pattern
-@AndroidEntryPoint
-class SignUpActivity : WooDroidActivity<UserViewModel>() {
+import javax.inject.Inject
 
-    val viewModel : UserViewModel by viewModels()
+@AndroidEntryPoint
+class SignUpActivity : WooDroidActivity() {
+
+    val viewModel : CustomerViewModel by viewModels()
+    @Inject lateinit var currentSession: CurrentSession
     val TAG = this::getLocalClassName
 
     private lateinit var progressDialog: ProgressDialogFragment
@@ -53,12 +57,14 @@ class SignUpActivity : WooDroidActivity<UserViewModel>() {
             val lastName = etLastName.text.toString()
             val password = etPassword.text.toString()
 
-            var user = User()
+            val user = Customer()
             user.email = email
-            user.firstname = firstName
-            user.lastname = lastName
+            user.username = email
+            user.firstName = firstName
+            user.lastName = lastName
+            user.password = password
 
-           viewModel.signUp(email, password).observe(this, Observer {
+           viewModel.create(user).observe(this, Observer {
                    response->
                when (response!!.status()){
                    Status.LOADING ->{
@@ -67,7 +73,10 @@ class SignUpActivity : WooDroidActivity<UserViewModel>() {
 
                    Status.SUCCESS ->{
                        stopShowingLoading()
-                       startActivity(Intent(baseContext, HomeActivity::class.java))
+//                       todo login process can be done in background.
+                       Toast.makeText(this, "Login to Continue", Toast.LENGTH_SHORT).show()
+                       startActivity(Intent(baseContext, SignInActivity::class.java))
+                       finish()
                    }
 
                    Status.ERROR ->{
@@ -95,12 +104,12 @@ class SignUpActivity : WooDroidActivity<UserViewModel>() {
            val firstName =  etFirstName.text.toString()
             val lastName = etLastName.text.toString()
 
-           var user = User()
-            user.email = email
-            user.firstname = firstName
-            user.lastname = lastName
+           var customer = Customer()
+            customer.email = email
+            customer.firstName = firstName
+            customer.lastName = lastName
 
-            viewModel.updateUser(user).observe(this, Observer {
+            viewModel.update(currentSession.getCurrentUserId(), customer).observe(this, Observer {
                 response->
                 when (response!!.status()){
                     Status.LOADING ->{

@@ -22,11 +22,6 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.onboarding.AnonymousSignInActivity"
-            android:label="@string/title_activity_anonymous_sign_in"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.checkout.CheckoutActivity"
             android:label="@string/title_activity_checkout"
             android:exported="true"
@@ -76,7 +71,7 @@
             android:name=".ui.onboarding.SignUpActivity"
             android:label="@string/title_activity_category"
             android:exported="true"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.onboarding.SignInActivity"
             android:label="@string/title_activity_category"
@@ -122,7 +117,7 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.MenuActivity"
+            android:name=".common.activity.MenuActivity"
             android:label="@string/title_activity_menu"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />

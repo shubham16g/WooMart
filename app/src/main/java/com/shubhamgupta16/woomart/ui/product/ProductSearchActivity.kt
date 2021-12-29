@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
+import com.shubhamgupta16.woomart.common.activity.CalligraphyBaseActivity
 import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
 import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
 
@@ -26,7 +26,7 @@ import java.util.ArrayList
 
 
 @AndroidEntryPoint
-class ProductSearchActivity : BaseActivity() {
+class ProductSearchActivity : CalligraphyBaseActivity() {
 
     lateinit var adapter: ProductAdapter
     lateinit var products: ArrayList<Product>

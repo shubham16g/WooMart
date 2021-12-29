@@ -1,61 +1,57 @@
-package com.shubhamgupta16.woomart.viewmodels;
+package com.shubhamgupta16.woomart.viewmodels
 
-import androidx.lifecycle.ViewModel;
-
-import com.shubhamgupta16.woomart.common.WooLiveData;
-
-import java.util.List;
-
-import javax.inject.Inject;
-
-import com.shubhamgupta16.woomart.repo.CustomerRepository;
-
-import dagger.hilt.android.lifecycle.HiltViewModel;
-import me.gilo.woodroid.models.Customer;
-import me.gilo.woodroid.models.filters.CustomerFilter;
-
+import androidx.lifecycle.ViewModel
+import com.shubhamgupta16.woomart.common.WooLiveData
+import com.shubhamgupta16.woomart.network.wpmodel.JWTModel
+import com.shubhamgupta16.woomart.repo.CustomerRepository
+import com.shubhamgupta16.woomart.sessions.CurrentSession
+import dagger.hilt.android.lifecycle.HiltViewModel
+import me.gilo.woodroid.models.Customer
+import me.gilo.woodroid.models.filters.CustomerFilter
+import javax.inject.Inject
 
 @HiltViewModel
-public final class CustomerViewModel extends ViewModel {
-    private final CustomerRepository customerRepository;
+class CustomerViewModel @Inject internal constructor(
+    private val customerRepository: CustomerRepository
+) : ViewModel() {
 
-    @Inject
-    CustomerViewModel(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-
+    fun create(customer: Customer?): WooLiveData<Customer> {
+        return customerRepository.create(customer!!)
     }
 
-    public WooLiveData<Customer> create(Customer customer) {
-        return customerRepository.create(customer);
+    fun customer(id: Int): WooLiveData<Customer> {
+        return customerRepository.customer(id)
     }
 
-
-    public WooLiveData<Customer> customer(int id) {
-        return customerRepository.customer(id);
+    fun currentCustomer(): WooLiveData<List<Customer>> {
+        return customerRepository.currentCustomer()
     }
 
-    public WooLiveData<List<Customer>> currentCustomer() {
-        return customerRepository.currentCustomer();
+    fun customers(): WooLiveData<List<Customer>> {
+        return customerRepository.customers()
     }
 
-    public WooLiveData<List<Customer>> customers() {
-        return customerRepository.customers();
+    fun customers(customerFilter: CustomerFilter?): WooLiveData<List<Customer>> {
+        return customerRepository.customers(customerFilter!!)
     }
 
-    public WooLiveData<List<Customer>> customers(CustomerFilter customerFilter) {
-        return customerRepository.customers(customerFilter);
+    fun customer(customerFilter: CustomerFilter?): WooLiveData<List<Customer>> {
+        return customerRepository.customers(customerFilter!!)
     }
 
-    public WooLiveData<Customer> update(int id, Customer customer) {
-        return customerRepository.update(id, customer);
+    fun update(id: Int, customer: Customer?): WooLiveData<Customer> {
+        return customerRepository.update(id, customer!!)
     }
 
-    public WooLiveData<Customer> delete(int id) {
-        return customerRepository.delete(id);
+    fun delete(id: Int): WooLiveData<Customer> {
+        return customerRepository.delete(id)
     }
 
-    public WooLiveData<Customer> delete(int id, boolean force) {
-        return customerRepository.delete(id, force);
+    fun delete(id: Int, force: Boolean): WooLiveData<Customer> {
+        return customerRepository.delete(id, force)
     }
 
+    fun login(email: String?, password: String?): WooLiveData<JWTModel> {
+        return customerRepository.login(email!!, password!!)
+    }
 }

@@ -74,7 +74,6 @@ dependencies {
 
     //firebase stuff
     implementation 'com.google.firebase:firebase-database:20.0.3'
-    implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-core:20.0.2'
     implementation 'com.google.firebase:firebase-firestore:24.0.0'
     implementation 'com.google.firebase:firebase-storage:20.0.0'

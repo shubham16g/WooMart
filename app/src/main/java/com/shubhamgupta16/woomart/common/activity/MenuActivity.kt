@@ -1,4 +1,4 @@
-package com.shubhamgupta16.woomart.ui
+package com.shubhamgupta16.woomart.common.activity
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager

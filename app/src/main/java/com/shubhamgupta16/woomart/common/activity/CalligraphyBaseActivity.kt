@@ -1,4 +1,4 @@
-package com.shubhamgupta16.woomart.common
+package com.shubhamgupta16.woomart.common.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,7 +9,7 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
  * This Activity is to be inherited by any activity to initiate the injection.
  */
 @SuppressLint("Registered")
-open class BaseActivity : AppCompatActivity() {
+open class CalligraphyBaseActivity : AppCompatActivity() {
 
     public override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))

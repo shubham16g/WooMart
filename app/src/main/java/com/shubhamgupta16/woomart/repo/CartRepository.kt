@@ -2,7 +2,6 @@ package com.shubhamgupta16.woomart.repo
 
 
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.shubhamgupta16.woomart.common.CompletionGenericLiveData
@@ -17,11 +16,11 @@ constructor() {
     @Inject
     lateinit var woocommerce: Woocommerce
 
-
+// todo firebase auth
     private val cart: CollectionReference = FirebaseFirestore.getInstance()
         .collection("users")
-        .document(FirebaseAuth.getInstance().currentUser?.uid ?: "0")
-        .collection("cart")
+//        .document(FirebaseAuth.getInstance().currentUser?.uid ?: "0")
+//        .collection("cart")
 
     fun cart(): QueryLiveData<CartLineItem> {
         return QueryLiveData(

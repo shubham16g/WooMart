@@ -1,4 +1,4 @@
-package com.shubhamgupta16.woomart.ui
+package com.shubhamgupta16.woomart.common.activity
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -10,13 +10,6 @@ import me.gilo.woodroid.Woocommerce
 open class BaseActivity : AppCompatActivity() {
 
     private lateinit var progressDialog : ProgressDialogFragment
-
-    val woocommerce = Woocommerce.Builder()
-        .setSiteUrl(Config.siteUrl)
-        .setApiVersion(Woocommerce.API_V3)
-        .setConsumerKey(Config.consumerKey)
-        .setConsumerSecret(Config.consumerSecret)
-        .build()
 
 
     override fun attachBaseContext(newBase: Context) {

@@ -1,28 +1,32 @@
 package com.shubhamgupta16.woomart.ui.onboarding
 
-import androidx.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
+import com.shubhamgupta16.woomart.R
+import com.shubhamgupta16.woomart.sessions.CurrentSession
+import com.shubhamgupta16.woomart.common.activity.WooDroidActivity
+import com.shubhamgupta16.woomart.ui.home.HomeActivity
+import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
+import com.shubhamgupta16.woomart.viewmodels.CustomerViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.content_sign_in.*
-import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
-import com.shubhamgupta16.woomart.viewmodels.UserViewModel
 import me.gilo.woodroid.callback.Status
-import com.shubhamgupta16.woomart.ui.WooDroidActivity
-import com.shubhamgupta16.woomart.ui.home.HomeActivity
-import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class SignInActivity : WooDroidActivity<UserViewModel>() {
+class SignInActivity : WooDroidActivity() {
 
 
-    val viewModel : UserViewModel by viewModels()
+    val viewModel: CustomerViewModel by viewModels()
+    @Inject
+    lateinit var currentSession: CurrentSession
 
     private lateinit var progressDialog: ProgressDialogFragment
     private val pattern = Pattern.compile(EMAIL_PATTERN)
@@ -50,22 +54,27 @@ class SignInActivity : WooDroidActivity<UserViewModel>() {
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
 
-            viewModel.login(email, password).observe(this, Observer {
+            viewModel.login(email, password).observe(this, {
                 response->
                 when (response!!.status()){
                     Status.LOADING ->{
                         showLoading("Performing log in", "This will only take a short while")
                     }
 
-                    Status.SUCCESS ->{
+                    Status.SUCCESS -> {
                         stopShowingLoading()
-                        startActivity(Intent(baseContext, HomeActivity::class.java))
-
+                        val jwtModel = response.data()
+                        if (jwtModel.success) {
+                            currentSession.login(jwtModel.data, password)
+                            startActivity(Intent(baseContext, HomeActivity::class.java))
+                        }
+                        else
+                            Toast.makeText(baseContext, jwtModel.message, Toast.LENGTH_SHORT).show()
                     }
 
                     Status.ERROR ->{
                         stopShowingLoading()
-                        Toast.makeText(baseContext, "Something went wrong", Toast.LENGTH_LONG).show()
+                        Toast.makeText(baseContext, "Something went wrong -> ${response.error()}", Toast.LENGTH_LONG).show()
                     }
 
                     Status.EMPTY ->{
@@ -74,12 +83,15 @@ class SignInActivity : WooDroidActivity<UserViewModel>() {
 
                 }
             })
-
-
-
         } else {
             Toast.makeText(this, "Please correct the information entered", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun loadUserData(){
+        /*viewModel.customer.observe(this){
+
+        }*/
     }
 
     private fun validates(): Boolean {

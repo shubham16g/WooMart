@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.section_related_products.*
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
 import com.shubhamgupta16.woomart.events.ProductEvent
 import com.shubhamgupta16.woomart.viewmodels.ProductViewModel
 import com.shubhamgupta16.woomart.adapter.HomeProductAdapter

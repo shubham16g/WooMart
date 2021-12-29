@@ -7,15 +7,22 @@ import com.shubhamgupta16.woomart.R
 import kotlinx.android.synthetic.main.activity_coupons.*
 import kotlinx.android.synthetic.main.content_coupons.*
 import com.shubhamgupta16.woomart.adapter.CouponAdapter
-import com.shubhamgupta16.woomart.ui.BaseActivity
+import com.shubhamgupta16.woomart.common.activity.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
+import me.gilo.woodroid.Woocommerce
 import me.gilo.woodroid.models.Coupon
 import me.gilo.woodroid.models.filters.CouponFilter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CouponsActivity : BaseActivity() {
+
+    @Inject
+    lateinit var woocommerce: Woocommerce
 
 
     lateinit var adapter : CouponAdapter

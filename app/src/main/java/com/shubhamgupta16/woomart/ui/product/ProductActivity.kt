@@ -16,7 +16,7 @@ import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_product.*
 import kotlinx.android.synthetic.main.content_product.*
 import com.shubhamgupta16.woomart.R
-import com.shubhamgupta16.woomart.common.BaseActivity
+import com.shubhamgupta16.woomart.common.activity.CalligraphyBaseActivity
 import com.shubhamgupta16.woomart.events.ProductEvent
 import com.shubhamgupta16.woomart.models.CartLineItem
 import com.shubhamgupta16.woomart.ui.state.ProgressDialogFragment
@@ -30,7 +30,7 @@ import me.gilo.woodroid.models.Product
 import org.greenrobot.eventbus.EventBus
 
 @AndroidEntryPoint
-class ProductActivity : BaseActivity() {
+class ProductActivity : CalligraphyBaseActivity() {
 
     var productInCart = false;
     lateinit var currentCartItem : CartLineItem
