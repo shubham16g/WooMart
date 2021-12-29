@@ -67,6 +67,7 @@ class SignInActivity : WooDroidActivity() {
                         if (jwtModel.success) {
                             currentSession.login(jwtModel.data, password)
                             startActivity(Intent(baseContext, HomeActivity::class.java))
+                            finish()
                         }
                         else
                             Toast.makeText(baseContext, jwtModel.message, Toast.LENGTH_SHORT).show()

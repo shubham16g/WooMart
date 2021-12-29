@@ -1,18 +1,14 @@
 package com.shubhamgupta16.woomart
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.shubhamgupta16.woomart.network.WPService
-import com.shubhamgupta16.woomart.network.wpmodel.JWTModel
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.shubhamgupta16.woomart.sessions.CurrentSession
 import com.shubhamgupta16.woomart.ui.home.HomeActivity
 import com.shubhamgupta16.woomart.ui.onboarding.SignInActivity
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -39,11 +35,13 @@ class MainActivity : AppCompatActivity() {
             }
         })*/
 
-        if (currentSession.hasCurrentUser()) {
-            startActivity(Intent(baseContext, HomeActivity::class.java))
-        } else {
-            startActivity(Intent(baseContext, SignInActivity::class.java))
-        }
-        finish()
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (currentSession.hasCurrentUser()) {
+                startActivity(Intent(baseContext, HomeActivity::class.java))
+            } else {
+                startActivity(Intent(baseContext, SignInActivity::class.java))
+            }
+            finish()
+        }, 3000)
     }
 }
